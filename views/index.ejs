@@ -1,31 +1,40 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/css/style.css' />
+<%- include header %>
+  <script src="/js/index.js"></script>
   </head>
   <body>
-    <form action="/reg" class="req-form" method="post" name="req-form">
-    	<div>
-    		<label for="username">用户名:</label>
-    		<input type="text" id="username" name="username"/>
-    	</div>
-    	<div>
-    		<label for="password">密码:</label>
-    		<input type="password" id="password" name="password"/>
-    	</div>
-    	<input type="submit" value="注册" id="req-btn"/>
-    </form>
-    <form action="/login" class="login-form" method="post" name="login-form">
-    	<div>
-    		<label for="username">用户名:</label>
-    		<input type="text" id="username" name="username"/>
-    	</div>
-    	<div>
-    		<label for="password">密码:</label>
-    		<input type="password" id="password" name="password"/>
-    	</div>
-    	<input type="submit" value="登录" id="login-btn"/>
-    </form>
-  </body>
-</html>
+    <style>
+        .container{margin: 20px auto;width: 30%;}
+        label{cursor: pointer;}
+        #reg-form{display: none;}
+    </style>
+    <div class="container">
+        <form class="well" id="login-form">
+          <div class="form-group">
+            <label for="l-username">用户名:</label>
+            <input type="email" class="form-control" id="l-username" placeholder="username" name="username"/>
+          </div>
+          <div class="form-group">
+            <label for="l-password">密码:</label>
+            <input type="password" class="form-control" id="l-password" placeholder="Password" name="password"/>
+          </div>
+          <a href="javascript:void(0);" class="btn btn-primary" id="login-btn">登录</a>
+          <a href="javascript:void(0);" class="gotoReg">没有账号？点击注册</a>
+        </form>
+        <form class="well" id="reg-form">
+          <div class="form-group">
+            <label for="r-username">用户名:</label>
+            <input type="email" class="form-control" id="r-username" placeholder="username" name="username"/>
+          </div>
+          <div class="form-group">
+            <label for="r-password">密码:</label>
+            <input type="password" class="form-control" id="r-password" placeholder="Password" name="password"/>
+          </div>
+          <div class="form-group">
+            <label for="re-password">重复密码:</label>
+            <input type="password" class="form-control" id="re-password" placeholder="Repeat Password" name="re-password"/>
+          </div>
+          <a href="javascript:void(0);" class="btn btn-primary" id="reg-btn">注册</a>
+          <a href="javascript:void(0);" class="gotoLog">没有账号？点击登录</a>
+        </form>
+    </div>
+<%- include footer %>

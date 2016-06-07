@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>manage</title>
-    <link rel='stylesheet' href='/css/style.css' />
+<%- include header %>
     <script src="/js/timer.js"></script>
   </head>
   <body>
@@ -11,6 +7,7 @@
                :
         <span>{s}</span>
     </div>
+    <audio src="/music/bell_ring.mp3" id="music">当前浏览器不支持audio</audio>
     <script>
         var TIMER1 = 25 * 60;//工作时间
         var TIMER2 = 3 * 60;//休息时间
@@ -18,6 +15,9 @@
         var timer = time(el,TIMER1,function(){
             alert('倒计时完成!');
         });
+        setTimeout(function(){
+            var mp3 = document.getElementById('music');
+            mp3.play();
+        },1000);
     </script>
-  </body>
-</html>
+<%- include footer %>
