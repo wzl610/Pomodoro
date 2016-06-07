@@ -5,7 +5,7 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <form action="/login" class="login-form" method="post">
+    <form action="/reg" class="req-form" method="post" name="req-form">
     	<div>
     		<label for="username">用户名:</label>
     		<input type="text" id="username" name="username"/>
@@ -14,7 +14,18 @@
     		<label for="password">密码:</label>
     		<input type="password" id="password" name="password"/>
     	</div>
-    	<input type="submit" value="登录"/>
+    	<input type="submit" value="注册" id="req-btn"/>
+    </form>
+    <form action="/login" class="login-form" method="post" name="login-form">
+    	<div>
+    		<label for="username">用户名:</label>
+    		<input type="text" id="username" name="username"/>
+    	</div>
+    	<div>
+    		<label for="password">密码:</label>
+    		<input type="password" id="password" name="password"/>
+    	</div>
+    	<input type="submit" value="登录" id="login-btn"/>
     </form>
   </body>
 </html>
