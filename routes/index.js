@@ -19,7 +19,7 @@ module.exports = function(app){
 			}
 			if(user){
 				if(user.password === password){
-					console.log('登录成功!');
+					res.render('manage');
 				}else{
 					console.log('密码错误!');
 				}
@@ -56,6 +56,16 @@ module.exports = function(app){
 			});	
 
 		})
-	})
+	});
+
+	app.get('/timer',function(req,res){
+		const TIMER_TYPE_1 = 25;//工作时间
+		const TIMER_TYPE_2 = 3;//休息时间
+		let start = new Date().getTime();
+	});
+
+	app.get('/test',function(req,res){
+		res.render('manage');
+	});
 };
 

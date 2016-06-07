@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>manage</title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <script src="/js/timer.js"></script>
+  </head>
+  <body>
+    <div id="container">
+        <span>{m}</span>
+               :
+        <span>{s}</span>
+    </div>
+    <script>
+        var TIMER1 = 25 * 60;//工作时间
+        var TIMER2 = 3 * 60;//休息时间
+        var el = document.getElementById('container');
+        var timer = time(el,TIMER1,function(){
+            alert('倒计时完成!');
+        });
+    </script>
+  </body>
+</html>
