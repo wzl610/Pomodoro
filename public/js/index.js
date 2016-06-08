@@ -36,6 +36,31 @@ var oIndex = {
 		});
 		$('#reg-btn').on('click',function(){
 			//注册功能
+			var username = $('#r-username').val(),
+				password = $('#r-password').val(),
+				rePassword = $('#re-password').val();
+			if(username.length == 0){
+				alert('用户名不能为空!');
+				return ;
+			}
+			if(password.length == 0){
+				alert('密码不能为空!');
+				return ;
+			}
+			if(password!==rePassword){
+				alert('两次密码不一致!');
+				return;
+			}
+			$.post("/reg",{
+				username : username,
+				password : password
+			},function(data){
+				if(data.code=='1'){
+					alert(data.message);
+				}else{
+					location.href="/manage";
+				}
+			},'json');
 		})
 	},
 	init:function(){

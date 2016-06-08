@@ -39,19 +39,16 @@ module.exports = function(app){
 		});
 		newUser.get(function(err,user){
 			if(err){
-				console.log(err);
-				return ; 
+				res.json({code:1,message:err});
 			}
 			if(user){
-				console.log('已存在此用户!');
-				return ;
+				res.json({code:1,message:"已存在此用户!"});
 			}
 			newUser.save(function(err,user){
 				if(err){
-					console.log(err);
-					return ; 
+					res.json({code:1,message:err});
 				}
-				console.log('注册成功!',user);
+				res.json({code:0});
 			});	
 
 		})
