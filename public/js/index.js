@@ -26,8 +26,12 @@ var oIndex = {
 			$.post("/login",{
 				username : username,
 				password : password
-			},function(){
-				
+			},function(data){
+				if(data.code=='1'){
+					alert(data.message);
+				}else{
+					location.href="/manage";
+				}
 			},'json');
 		});
 		$('#reg-btn').on('click',function(){

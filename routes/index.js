@@ -14,17 +14,16 @@ module.exports = function(app){
 		});
 		newUser.get(function(err,user){
 			if(err){
-				console.log(err);
-				return;
+				res.json({code:1,message:err});
 			}
 			if(user){
 				if(user.password === password){
-					res.render('manage');
+					res.json({code:0});
 				}else{
-					console.log('密码错误!');
+					res.json({code:1,message:"密码错误!"});
 				}
 			}else{
-				console.log('查无此用户');
+				res.json({code:1,message:"查无此用户"});
 			}
 		})
 
@@ -64,7 +63,7 @@ module.exports = function(app){
 		let start = new Date().getTime();
 	});
 
-	app.get('/test',function(req,res){
+	app.get('/manage',function(req,res){
 		res.render('manage');
 	});
 };
